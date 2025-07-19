@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-05-10 10:56:58 by Eclipse SUMO netedit Version 1.22.0
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <!-- Vehicles, persons and containers (sorted by depart) -->
+    <flow id="f_0" begin="0.00" from="-E744" to="E463" end="3600.00" vehsPerHour="1800"/>
+    <flow id="f_1" begin="0.00" color="cyan" from="-E466" to="-E327" via="-E120 E249 -E561" end="3600.00" vehsPerHour="1800"/>
+    <flow id="f_2" begin="0.00" color="cyan" from="-E625" to="-E424" via="-E251 E246 E411" end="3600.00" vehsPerHour="1800"/>
+    <flow id="f_3" begin="0.00" color="magenta" from="-E609" to="-E6" via="E452" end="3600.00" vehsPerHour="1800"/>
+    <flow id="f_4" begin="0.00" from="E80" to="-E647" end="3600.00" vehsPerHour="1800"/>
+    <flow id="f_5" begin="0.00" color="green" from="-E655" to="E316" end="3600.00" vehsPerHour="1800"/>
+    <person id="p_0" depart="0.00" color="128,0,128">
+        <personTrip from="E452" to="-E603"/>
+    </person>
+    <personFlow id="pf_0" begin="0.00" end="3600.00" personsPerHour="1800">
+        <personTrip from="-E463" to="E93"/>
+    </personFlow>
+    <personFlow id="pf_1" begin="0.00" color="red" end="3600.00" personsPerHour="1800">
+        <personTrip from="-E627" to="-E371"/>
+    </personFlow>
+    <personFlow id="pf_2" begin="0.00" color="blue" end="3600.00" personsPerHour="1800">
+        <personTrip from="E603" to="E120"/>
+    </personFlow>
+</routes>

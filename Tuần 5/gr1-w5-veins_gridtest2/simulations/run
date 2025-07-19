@@ -1,0 +1,4 @@
+#!/bin/sh
+cd `dirname $0`
+../src/gr1_w5_veins_gridtest2 -n .:../src $*
+# for shared lib, use: opp_run -l ../src/gr1_w5_veins_gridtest2 -n .:../src $*
