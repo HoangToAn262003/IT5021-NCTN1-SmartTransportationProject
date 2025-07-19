@@ -1,0 +1,3 @@
+package vanettutorial;
+
+@license(LGPL);

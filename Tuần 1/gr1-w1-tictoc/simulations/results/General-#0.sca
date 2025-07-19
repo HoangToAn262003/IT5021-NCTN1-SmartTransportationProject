@@ -1,0 +1,40 @@
+version 3
+run General-0-20250315-15:40:45-8040
+attr configname General
+attr datetime 20250315-15:40:45
+attr datetimef 20250315-154045
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network TictocGr1
+attr processid 8040
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network TictocGr1
+config cpu-time-limit 60s
+config **.tic.sendInitialMessage true
+
+par TictocGr1.tic.out.channel typename "\"ned.DelayChannel\""
+par TictocGr1.tic.out.channel disabled false
+attr mutable ""
+par TictocGr1.tic.out.channel delay 0.1s
+attr mutable ""
+attr unit s
+par TictocGr1.toc.out.channel typename "\"ned.DelayChannel\""
+par TictocGr1.toc.out.channel disabled false
+attr mutable ""
+par TictocGr1.toc.out.channel delay 0.1s
+attr mutable ""
+attr unit s
+par TictocGr1.tic typename "\"gr1_tictoc.Txc\""
+par TictocGr1.tic sendInitialMessage true
+par TictocGr1.toc typename "\"gr1_tictoc.Txc\""
+par TictocGr1.toc sendInitialMessage false
+par TictocGr1 typename "\"gr1_tictoc.simulations.TictocGr1\""
+
