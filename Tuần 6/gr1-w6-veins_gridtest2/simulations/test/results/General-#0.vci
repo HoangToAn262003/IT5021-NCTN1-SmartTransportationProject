@@ -1,0 +1,162 @@
+file 18047 1745734766                                           
+version 3
+run General-0-20250427-13:13:41-9688
+attr configname General
+attr datetime 20250427-13:13:41
+attr datetimef 20250427-131341
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network TestNetwork
+attr processid 9688
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../../../samples/inet4.5/images;../../../../samples/veins/images
+config cmdenv-express-mode true
+config cmdenv-autoflush true
+config cmdenv-status-frequency 1s
+config **.cmdenv-log-level info
+config ned-path .
+config image-path ../../images
+config network TestNetwork
+config debug-on-errors true
+config print-undisposed true
+config sim-time-limit 200s
+config **.scalar-recording true
+config **.vector-recording true
+config *.playgroundSizeX 2500m
+config *.playgroundSizeY 2500m
+config *.playgroundSizeZ 50m
+config *.annotations.draw true
+config *.manager.updateInterval 1s
+config *.manager.host "\"localhost\""
+config *.manager.port 9999
+config *.manager.autoShutdown true
+config *.manager.launchConfig "xmldoc(\"grid3x3.launchd.xml\")"
+config *.rsu[0].mobility.x 100
+config *.rsu[0].mobility.y 100
+config *.rsu[0].mobility.z 3
+config *.rsu[*].applType "\"RSUControlApp\""
+config *.rsu[*].appl.headerLength "80 bit"
+config *.rsu[*].appl.sendBeacons false
+config *.rsu[*].appl.dataOnSch false
+config *.rsu[*].nic.phy80211p.antennaOffsetZ "0 m"
+config *.connectionManager.sendDirect true
+config *.connectionManager.maxInterfDist 2600m
+config *.connectionManager.drawMaxIntfDist false
+config *.**.nic.mac1609_4.useServiceChannel true
+config *.**.nic.mac1609_4.txPower 20mW
+config *.**.nic.mac1609_4.bitrate 6Mbps
+config *.**.nic.phy80211p.minPowerLevel -110dBm
+config *.**.nic.phy80211p.useNoiseFloor true
+config *.**.nic.phy80211p.noiseFloor -98dBm
+config *.**.nic.phy80211p.decider "xmldoc(\"config.xml\")"
+config *.**.nic.phy80211p.analogueModels "xmldoc(\"config.xml\")"
+config *.**.nic.phy80211p.usePropagationDelay true
+config *.**.nic.phy80211p.antenna "xmldoc(\"antenna.xml\", \"/root/Antenna[@id='monopole']\")"
+config *.node[*].nic.phy80211p.antennaOffsetY "0 m"
+config *.node[*].nic.phy80211p.antennaOffsetZ "1.895 m"
+config *.node[*].applType "\"VehicleControlApp\""
+config *.node[*].appl.headerLength "80 bit"
+config *.node[*].appl.sendBeacons false
+config *.node[*].appl.dataOnSch true
+config *.node[*].appl.beaconInterval 1s
+config *.node[*].veinsmobility.x 0
+config *.node[*].veinsmobility.y 0
+config *.node[*].veinsmobility.z 0
+config *.node[*].veinsmobility.setHostSpeed false
+config *.node[*0].veinsmobility.accidentCount 0
+
+vector 0 TestNetwork.rsu[0].nic.phy80211p RadioState ETV
+vector 1 TestNetwork.rsu[0].nic.phy80211p RadioChannel ETV
+vector 2 TestNetwork.node[0].nic.phy80211p RadioState ETV
+vector 3 TestNetwork.node[0].nic.phy80211p RadioChannel ETV
+vector 4 TestNetwork.manager posx ETV
+vector 5 TestNetwork.manager posy ETV
+vector 6 TestNetwork.node[1].nic.phy80211p RadioState ETV
+vector 7 TestNetwork.node[1].nic.phy80211p RadioChannel ETV
+vector 8 TestNetwork.manager posx ETV
+vector 9 TestNetwork.manager posy ETV
+vector 10 TestNetwork.node[2].nic.phy80211p RadioState ETV
+vector 11 TestNetwork.node[2].nic.phy80211p RadioChannel ETV
+vector 12 TestNetwork.manager posx ETV
+vector 13 TestNetwork.manager posy ETV
+vector 14 TestNetwork.manager speed ETV
+vector 15 TestNetwork.manager speed ETV
+vector 16 TestNetwork.manager speed ETV
+vector 17 TestNetwork.manager acceleration ETV
+vector 18 TestNetwork.manager co2emission ETV
+vector 19 TestNetwork.manager acceleration ETV
+vector 20 TestNetwork.manager co2emission ETV
+vector 21 TestNetwork.manager acceleration ETV
+vector 22 TestNetwork.manager co2emission ETV
+4	3869 686 21 8351 1 33 33 20.2 135.76623653233 2502.4593909286 257626.20507886
+5	4555 774 21 8351 1 33 33 38.5 226.6 4302.9896298183 649792.01795727
+8	5329 777 21 8351 1 33 33 23.4 109.5 1699.4008167281 117984.48787091
+9	6106 694 21 8351 1 33 33 120.2 226.6 5450.7823229466 968243.44530687
+12	6800 678 21 8351 1 33 33 126.6 220.2 5573.1124871923 1001489.5139785
+13	7478 817 21 8351 1 33 33 229.54795246493 323.4 9286.7825261022 2655511.9516047
+14	8295 882 274 8351 2 33 32 2.208746208949 12.052893408979 282.59623653233 2730.9796263822
+15	9177 884 274 8351 2 33 32 0.33016047173778 12.420069903712 257.32187549014 2512.4347573215
+16	10061 884 274 8351 2 33 32 0.11977071186752 15.124822390651 266.01424980095 2796.4311878373
+17	10945 890 530 8351 3 33 31 -4.2966821397529 2.4320730425417 4.7836910436609 94.848005761935
+18	11835 749 530 8351 3 33 31 0.973 7.7972479265789 93.825606573637 438.25252184161
+19	12584 874 530 8351 3 33 31 -4.2291564429264 2.5282658430282 9.878862995765 132.42173601912
+20	13458 767 530 8351 3 33 31 0.973 7.899401254031 104.964854076 504.03381795706
+21	14225 862 530 8351 3 33 31 -4.5 2.4864454656141 2.0183878738875 162.24641979559
+22	15087 729 530 8351 3 33 31 0.973 9.7365348220199 117.29889896485 698.07116938796
+4	15816 81 8599 9101 34 36 3 144.25521078395 166.20354874918 464.74528998261 72237.518933281
+5	15897 51 8599 9101 34 36 3 226.6 226.6 679.8 154042.68
+8	15948 81 8599 9101 34 36 3 108.13499788227 119.75499873616 340.82682173449 38789.163956591
+9	16029 51 8599 9101 34 36 3 226.6 226.6 679.8 154042.68
+12	16080 54 8599 9101 34 36 3 126.6 126.6 379.8 48082.68
+13	16134 84 8599 9101 34 36 3 203.56493443684 223.18103104595 641.44752122002 137345.213187
+14	16218 84 8599 9101 34 36 3 8.4889742516195 11.917018299698 30.437312216852 314.70538323214
+15	16302 84 8599 9101 34 36 3 4.8018272337893 9.0831223921308 20.740298717679 152.55646834347
+16	16386 84 8599 9101 34 36 3 6.4128367176721 11.137353673505 26.090815762214 238.10740334465
+17	16470 84 8599 9101 34 36 3 1.4965369990095 1.8856986341639 4.9245810470883 8.1743117041164
+18	16554 83 8599 9101 34 36 3 4.637699250254 7.2569480446213 17.310501871037 103.50303004827
+19	16637 86 8599 9101 34 36 3 -4.2812951583415 2.0535218579695 -4.366375114142 27.120057971857
+20	16723 64 8599 9101 34 36 3 0.973 4.8631678107354 6.8091678107354 25.543859155373
+21	16787 84 8599 9101 34 36 3 2.1277886533644 2.5967283024685 7.0724036343861 16.783054285555
+22	16871 84 8599 9101 34 36 3 5.0723617712384 8.7447701781922 19.776288865274 137.71141055536
+vector 23 TestNetwork.node[3].nic.phy80211p RadioState ETV
+vector 24 TestNetwork.node[3].nic.phy80211p RadioChannel ETV
+vector 25 TestNetwork.manager posx ETV
+vector 26 TestNetwork.manager posy ETV
+vector 27 TestNetwork.node[4].nic.phy80211p RadioState ETV
+vector 28 TestNetwork.node[4].nic.phy80211p RadioChannel ETV
+vector 29 TestNetwork.manager posx ETV
+vector 30 TestNetwork.manager posy ETV
+vector 31 TestNetwork.node[5].nic.phy80211p RadioState ETV
+vector 32 TestNetwork.node[5].nic.phy80211p RadioChannel ETV
+vector 33 TestNetwork.manager posx ETV
+vector 34 TestNetwork.manager posy ETV
+4	17561 27 9357 9357 37 37 1 177.58437025291 177.58437025291 177.58437025291 31536.208558123
+5	17588 17 9357 9357 37 37 1 226.6 226.6 226.6 51347.56
+8	17605 27 9357 9357 37 37 1 128.67140953772 128.67140953772 128.67140953772 16556.331632424
+9	17632 17 9357 9357 37 37 1 226.6 226.6 226.6 51347.56
+12	17649 18 9357 9357 37 37 1 126.6 126.6 126.6 16027.56
+13	17667 28 9357 9357 37 37 1 190.59215079704 190.59215079704 190.59215079704 36325.367945443
+14	17695 28 9357 9357 37 37 1 11.380821503731 11.380821503731 11.380821503731 129.52309809978
+15	17723 28 9357 9357 37 37 1 8.9807118409935 8.9807118409935 8.9807118409935 80.653185170961
+16	17751 28 9357 9357 37 37 1 12.972783639792 12.972783639792 12.972783639792 168.29311536485
+17	17779 30 9357 9357 37 37 1 -0.53619679596741 -0.53619679596741 -0.53619679596741 0.28750700400571
+18	17809 18 9357 9357 37 37 1 0.973 0.973 0.973 0.946729
+19	17827 28 9357 9357 37 37 1 2.1253627492348 2.1253627492348 2.1253627492348 4.5171668158348
+20	17855 28 9357 9357 37 37 1 6.2101738565394 6.2101738565394 6.2101738565394 38.566259328445
+21	17883 28 9357 9357 37 37 1 1.8354299662868 1.8354299662868 1.8354299662868 3.3688031611434
+22	17911 28 9357 9357 37 37 1 7.6758546781211 7.6758546781211 7.6758546781211 58.918745039634
+25	17939 17 9357 9357 37 37 1 20.2 20.2 20.2 408.04
+26	17956 17 9357 9357 37 37 1 38.5 38.5 38.5 1482.25
+29	17973 18 9357 9357 37 37 1 109.5 109.5 109.5 11990.25
+30	17991 18 9357 9357 37 37 1 120.2 120.2 120.2 14448.04
+33	18009 18 9357 9357 37 37 1 220.2 220.2 220.2 48488.04
+34	18027 18 9357 9357 37 37 1 240.5 240.5 240.5 57840.25
+

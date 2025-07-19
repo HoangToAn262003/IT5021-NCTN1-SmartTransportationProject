@@ -1,0 +1,1160 @@
+version 3
+run General-0-20250427-13:13:41-9688
+attr configname General
+attr datetime 20250427-13:13:41
+attr datetimef 20250427-131341
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network TestNetwork
+attr processid 9688
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../../../samples/inet4.5/images;../../../../samples/veins/images
+config cmdenv-express-mode true
+config cmdenv-autoflush true
+config cmdenv-status-frequency 1s
+config **.cmdenv-log-level info
+config ned-path .
+config image-path ../../images
+config network TestNetwork
+config debug-on-errors true
+config print-undisposed true
+config sim-time-limit 200s
+config **.scalar-recording true
+config **.vector-recording true
+config *.playgroundSizeX 2500m
+config *.playgroundSizeY 2500m
+config *.playgroundSizeZ 50m
+config *.annotations.draw true
+config *.manager.updateInterval 1s
+config *.manager.host "\"localhost\""
+config *.manager.port 9999
+config *.manager.autoShutdown true
+config *.manager.launchConfig "xmldoc(\"grid3x3.launchd.xml\")"
+config *.rsu[0].mobility.x 100
+config *.rsu[0].mobility.y 100
+config *.rsu[0].mobility.z 3
+config *.rsu[*].applType "\"RSUControlApp\""
+config *.rsu[*].appl.headerLength "80 bit"
+config *.rsu[*].appl.sendBeacons false
+config *.rsu[*].appl.dataOnSch false
+config *.rsu[*].nic.phy80211p.antennaOffsetZ "0 m"
+config *.connectionManager.sendDirect true
+config *.connectionManager.maxInterfDist 2600m
+config *.connectionManager.drawMaxIntfDist false
+config *.**.nic.mac1609_4.useServiceChannel true
+config *.**.nic.mac1609_4.txPower 20mW
+config *.**.nic.mac1609_4.bitrate 6Mbps
+config *.**.nic.phy80211p.minPowerLevel -110dBm
+config *.**.nic.phy80211p.useNoiseFloor true
+config *.**.nic.phy80211p.noiseFloor -98dBm
+config *.**.nic.phy80211p.decider "xmldoc(\"config.xml\")"
+config *.**.nic.phy80211p.analogueModels "xmldoc(\"config.xml\")"
+config *.**.nic.phy80211p.usePropagationDelay true
+config *.**.nic.phy80211p.antenna "xmldoc(\"antenna.xml\", \"/root/Antenna[@id='monopole']\")"
+config *.node[*].nic.phy80211p.antennaOffsetY "0 m"
+config *.node[*].nic.phy80211p.antennaOffsetZ "1.895 m"
+config *.node[*].applType "\"VehicleControlApp\""
+config *.node[*].appl.headerLength "80 bit"
+config *.node[*].appl.sendBeacons false
+config *.node[*].appl.dataOnSch true
+config *.node[*].appl.beaconInterval 1s
+config *.node[*].veinsmobility.x 0
+config *.node[*].veinsmobility.y 0
+config *.node[*].veinsmobility.z 0
+config *.node[*].veinsmobility.setHostSpeed false
+config *.node[*0].veinsmobility.accidentCount 0
+
+par TestNetwork.obstacles typename "\"org.car2x.veins.modules.obstacle.ObstacleControl\""
+par TestNetwork.obstacles obstacles "<obstacles/> at content:1"
+par TestNetwork.obstacles gridCellSize 250
+par TestNetwork.annotations typename "\"org.car2x.veins.modules.world.annotations.AnnotationManager\""
+par TestNetwork.annotations draw true
+par TestNetwork.annotations annotations "<annotations/> at content:1"
+par TestNetwork.connectionManager typename "\"org.car2x.veins.base.connectionManager.ConnectionManager\""
+par TestNetwork.connectionManager sendDirect true
+par TestNetwork.connectionManager maxInterfDist 2600m
+attr unit m
+par TestNetwork.connectionManager drawMaxIntfDist false
+par TestNetwork.world typename "\"org.car2x.veins.base.modules.BaseWorldUtility\""
+par TestNetwork.world playgroundSizeX 2500m
+attr unit m
+par TestNetwork.world playgroundSizeY 2500m
+attr unit m
+par TestNetwork.world playgroundSizeZ 50m
+attr unit m
+par TestNetwork.world useTorus false
+par TestNetwork.world use2D false
+par TestNetwork.manager typename "\"org.car2x.veins.modules.mobility.traci.TraCIScenarioManagerLaunchd\""
+par TestNetwork.manager connectAt 0s
+attr unit s
+par TestNetwork.manager firstStepAt -1s
+attr unit s
+par TestNetwork.manager updateInterval 1s
+attr unit s
+par TestNetwork.manager moduleType "\"org.car2x.veins.nodes.Car\""
+par TestNetwork.manager moduleName "\"node\""
+par TestNetwork.manager moduleDisplayString "\"*='i=veins/node/car;is=vs'\""
+par TestNetwork.manager trafficLightModuleType "\"\""
+par TestNetwork.manager trafficLightModuleName "\"tls\""
+par TestNetwork.manager trafficLightFilter "\"\""
+par TestNetwork.manager trafficLightModuleDisplayString "\"i=veins/node/trafficlight;is=vs\""
+par TestNetwork.manager host "\"localhost\""
+par TestNetwork.manager port 9999
+par TestNetwork.manager seed -1
+par TestNetwork.manager autoShutdown true
+par TestNetwork.manager margin 25
+par TestNetwork.manager roiRoads "\"\""
+par TestNetwork.manager roiRects "\"\""
+par TestNetwork.manager penetrationRate 1
+par TestNetwork.manager ignoreGuiCommands false
+par TestNetwork.manager order -1
+par TestNetwork.manager ignoreUnknownSubscriptionResults false
+par TestNetwork.manager launchConfig "<launch>...</launch> at F:/Programs/omnetpp-6.1/workspace/gr1-w6-veins_gridtest2/simulations/test/\\grid3x3.launchd.xml:35"
+scalar TestNetwork.manager roiArea 0
+par TestNetwork.roadsCanvasVisualizer typename "\"org.car2x.veins.visualizer.roads.RoadsCanvasVisualizer\""
+par TestNetwork.roadsCanvasVisualizer enabled true
+par TestNetwork.roadsCanvasVisualizer lineZIndex -1
+par TestNetwork.roadsCanvasVisualizer lineColor "\"firebrick4\""
+par TestNetwork.roadsCanvasVisualizer lineWidth 1
+par TestNetwork.roadsCanvasVisualizer lineWidthZoom false
+par TestNetwork.node[0].appl typename "\"gr1_w6_veins_gridtest2.veins_inet.VehicleControlApp\""
+par TestNetwork.node[0].appl headerLength 80bit
+attr unit bit
+par TestNetwork.node[0].appl sendBeacons false
+par TestNetwork.node[0].appl beaconLengthBits 256bit
+attr unit bit
+par TestNetwork.node[0].appl beaconUserPriority 7
+par TestNetwork.node[0].appl beaconInterval 1s
+attr unit s
+par TestNetwork.node[0].appl dataLengthBits 1024bit
+attr unit bit
+par TestNetwork.node[0].appl dataOnSch true
+par TestNetwork.node[0].appl dataUserPriority 7
+par TestNetwork.node[0].appl avoidBeaconSynchronization true
+par TestNetwork.node[0].appl sendWSA false
+par TestNetwork.node[0].appl wsaLengthBits 250bit
+attr unit bit
+par TestNetwork.node[0].appl wsaInterval 1s
+attr unit s
+par TestNetwork.node[0].appl appName "\"My first Veins App!\""
+scalar TestNetwork.node[0].appl generatedWSMs 0
+scalar TestNetwork.node[0].appl receivedWSMs 0
+scalar TestNetwork.node[0].appl generatedBSMs 37
+scalar TestNetwork.node[0].appl receivedBSMs 0
+scalar TestNetwork.node[0].appl generatedWSAs 0
+scalar TestNetwork.node[0].appl receivedWSAs 0
+par TestNetwork.node[0].nic.phy80211p typename "\"org.car2x.veins.modules.phy.PhyLayer80211p\""
+par TestNetwork.node[0].nic.phy80211p recordStats false
+par TestNetwork.node[0].nic.phy80211p usePropagationDelay true
+par TestNetwork.node[0].nic.phy80211p noiseFloor -98dBm
+attr unit dBm
+par TestNetwork.node[0].nic.phy80211p useNoiseFloor true
+par TestNetwork.node[0].nic.phy80211p antenna "<Antenna type=\"SampledAntenna1D\" id=\"monopole\">...</Antenna> at F:/Programs/omnetpp-6.1/workspace/gr1-w6-veins_gridtest2/simulations/test/\\antenna.xml:35"
+par TestNetwork.node[0].nic.phy80211p antennaOffsetX 0m
+attr unit m
+par TestNetwork.node[0].nic.phy80211p antennaOffsetY 0m
+attr unit m
+par TestNetwork.node[0].nic.phy80211p antennaOffsetZ 1.895m
+attr unit m
+par TestNetwork.node[0].nic.phy80211p antennaOffsetYaw 0rad
+attr unit rad
+par TestNetwork.node[0].nic.phy80211p analogueModels "<root>...</root> at F:/Programs/omnetpp-6.1/workspace/gr1-w6-veins_gridtest2/simulations/test/\\config.xml:34"
+par TestNetwork.node[0].nic.phy80211p decider "<root>...</root> at F:/Programs/omnetpp-6.1/workspace/gr1-w6-veins_gridtest2/simulations/test/\\config.xml:34"
+par TestNetwork.node[0].nic.phy80211p minPowerLevel -110dBm
+attr unit dBm
+par TestNetwork.node[0].nic.phy80211p timeRXToTX 0s
+attr unit s
+par TestNetwork.node[0].nic.phy80211p timeRXToSleep 0s
+attr unit s
+par TestNetwork.node[0].nic.phy80211p timeTXToRX 0s
+attr unit s
+par TestNetwork.node[0].nic.phy80211p timeTXToSleep 0s
+attr unit s
+par TestNetwork.node[0].nic.phy80211p timeSleepToRX 0s
+attr unit s
+par TestNetwork.node[0].nic.phy80211p timeSleepToTX 0s
+attr unit s
+par TestNetwork.node[0].nic.phy80211p initialRadioState 0
+par TestNetwork.node[0].nic.phy80211p radioMinAtt 1
+par TestNetwork.node[0].nic.phy80211p radioMaxAtt 0
+par TestNetwork.node[0].nic.phy80211p nbRadioChannels 1
+par TestNetwork.node[0].nic.phy80211p initialRadioChannel 0
+par TestNetwork.node[0].nic.phy80211p ccaThreshold -65dBm
+attr unit dBm
+par TestNetwork.node[0].nic.phy80211p collectCollisionStatistics false
+par TestNetwork.node[0].nic.phy80211p allowTxDuringRx false
+scalar TestNetwork.node[0].nic.phy80211p busyTime 0.00072024373365297
+par TestNetwork.node[0].nic.mac1609_4 typename "\"org.car2x.veins.modules.mac.ieee80211p.Mac1609_4\""
+par TestNetwork.node[0].nic.mac1609_4 notAffectedByHostState false
+par TestNetwork.node[0].nic.mac1609_4 headerLength 0bit
+attr unit bit
+par TestNetwork.node[0].nic.mac1609_4 address "\"auto\""
+par TestNetwork.node[0].nic.mac1609_4 useServiceChannel true
+par TestNetwork.node[0].nic.mac1609_4 serviceChannel 1
+par TestNetwork.node[0].nic.mac1609_4 bitrate 6000000bps
+attr unit bps
+par TestNetwork.node[0].nic.mac1609_4 syncOffset 0.0003s
+attr unit s
+par TestNetwork.node[0].nic.mac1609_4 txPower 20mW
+attr unit mW
+par TestNetwork.node[0].nic.mac1609_4 queueSize 0
+par TestNetwork.node[0].nic.mac1609_4 dot11RTSThreshold 12000bit
+attr unit bit
+par TestNetwork.node[0].nic.mac1609_4 dot11ShortRetryLimit 7
+par TestNetwork.node[0].nic.mac1609_4 dot11LongRetryLimit 4
+par TestNetwork.node[0].nic.mac1609_4 ackLength 112bit
+attr unit bit
+par TestNetwork.node[0].nic.mac1609_4 useAcks false
+par TestNetwork.node[0].nic.mac1609_4 frameErrorRate 0
+par TestNetwork.node[0].nic.mac1609_4 ackErrorRate 0
+scalar TestNetwork.node[0].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar TestNetwork.node[0].nic.mac1609_4 ReceivedBroadcasts 142
+scalar TestNetwork.node[0].nic.mac1609_4 SentPackets 74
+scalar TestNetwork.node[0].nic.mac1609_4 SentAcknowledgements 0
+scalar TestNetwork.node[0].nic.mac1609_4 RetriesExceeded 0
+scalar TestNetwork.node[0].nic.mac1609_4 SNIRLostPackets 4
+scalar TestNetwork.node[0].nic.mac1609_4 RXTXLostPackets 51
+scalar TestNetwork.node[0].nic.mac1609_4 TotalLostPackets 55
+scalar TestNetwork.node[0].nic.mac1609_4 DroppedPacketsInMac 0
+scalar TestNetwork.node[0].nic.mac1609_4 TooLittleTime 0
+scalar TestNetwork.node[0].nic.mac1609_4 TimesIntoBackoff 111
+scalar TestNetwork.node[0].nic.mac1609_4 SlotsBackoff 103
+scalar TestNetwork.node[0].nic.mac1609_4 NumInternalContention 0
+scalar TestNetwork.node[0].nic.mac1609_4 totalBusyTime 0.038003981835
+scalar TestNetwork.node[0].nic.mac1609_4 retriesExceeded:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar TestNetwork.node[0].nic.mac1609_4 sentAcks:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar TestNetwork.node[0].nic.mac1609_4 sentPackets:count 74
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar TestNetwork.node[0].nic.mac1609_4 collisions:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar TestNetwork.node[0].nic.mac1609_4 channelBusy:timeavg 0.0010511589731875
+attr recordingmode timeavg
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+par TestNetwork.node[0].nic typename "\"org.car2x.veins.modules.nic.Nic80211p\""
+par TestNetwork.node[0].nic connectionManagerName "\"connectionManager\""
+par TestNetwork.node[0].veinsmobility typename "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
+par TestNetwork.node[0].veinsmobility notAffectedByHostState true
+par TestNetwork.node[0].veinsmobility x 0
+par TestNetwork.node[0].veinsmobility y 0
+par TestNetwork.node[0].veinsmobility z 0
+par TestNetwork.node[0].veinsmobility xOrientation 1
+par TestNetwork.node[0].veinsmobility yOrientation 0
+par TestNetwork.node[0].veinsmobility zOrientation 0
+par TestNetwork.node[0].veinsmobility hostPositionOffset 0m
+attr unit m
+par TestNetwork.node[0].veinsmobility setHostSpeed false
+par TestNetwork.node[0].veinsmobility accidentCount 0
+par TestNetwork.node[0].veinsmobility accidentStart 46.3465s
+attr unit s
+par TestNetwork.node[0].veinsmobility accidentDuration "uniform(30s, 60s)"
+attr unit s
+par TestNetwork.node[0].veinsmobility accidentInterval "uniform(30s, 60s)"
+attr unit s
+scalar TestNetwork.node[0].veinsmobility startTime 1
+scalar TestNetwork.node[0].veinsmobility totalTime 36
+scalar TestNetwork.node[0].veinsmobility stopTime 37.154427707311
+scalar TestNetwork.node[0].veinsmobility minSpeed 2.208746208949
+scalar TestNetwork.node[0].veinsmobility maxSpeed 12.052893408979
+scalar TestNetwork.node[0].veinsmobility totalDistance 326.46379605073
+scalar TestNetwork.node[0].veinsmobility totalCO2Emission 112.10910844467
+par TestNetwork.node[0] typename "\"org.car2x.veins.nodes.Car\""
+par TestNetwork.node[0] applType "\"VehicleControlApp\""
+par TestNetwork.node[0] nicType "\"Nic80211p\""
+par TestNetwork.node[0] veinsmobilityType "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
+par TestNetwork.node[1].appl typename "\"gr1_w6_veins_gridtest2.veins_inet.VehicleControlApp\""
+par TestNetwork.node[1].appl headerLength 80bit
+attr unit bit
+par TestNetwork.node[1].appl sendBeacons false
+par TestNetwork.node[1].appl beaconLengthBits 256bit
+attr unit bit
+par TestNetwork.node[1].appl beaconUserPriority 7
+par TestNetwork.node[1].appl beaconInterval 1s
+attr unit s
+par TestNetwork.node[1].appl dataLengthBits 1024bit
+attr unit bit
+par TestNetwork.node[1].appl dataOnSch true
+par TestNetwork.node[1].appl dataUserPriority 7
+par TestNetwork.node[1].appl avoidBeaconSynchronization true
+par TestNetwork.node[1].appl sendWSA false
+par TestNetwork.node[1].appl wsaLengthBits 250bit
+attr unit bit
+par TestNetwork.node[1].appl wsaInterval 1s
+attr unit s
+par TestNetwork.node[1].appl appName "\"My first Veins App!\""
+scalar TestNetwork.node[1].appl generatedWSMs 0
+scalar TestNetwork.node[1].appl receivedWSMs 0
+scalar TestNetwork.node[1].appl generatedBSMs 37
+scalar TestNetwork.node[1].appl receivedBSMs 0
+scalar TestNetwork.node[1].appl generatedWSAs 0
+scalar TestNetwork.node[1].appl receivedWSAs 0
+par TestNetwork.node[1].nic.phy80211p typename "\"org.car2x.veins.modules.phy.PhyLayer80211p\""
+par TestNetwork.node[1].nic.phy80211p recordStats false
+par TestNetwork.node[1].nic.phy80211p usePropagationDelay true
+par TestNetwork.node[1].nic.phy80211p noiseFloor -98dBm
+attr unit dBm
+par TestNetwork.node[1].nic.phy80211p useNoiseFloor true
+par TestNetwork.node[1].nic.phy80211p antenna "<Antenna type=\"SampledAntenna1D\" id=\"monopole\">...</Antenna> at F:/Programs/omnetpp-6.1/workspace/gr1-w6-veins_gridtest2/simulations/test/\\antenna.xml:35"
+par TestNetwork.node[1].nic.phy80211p antennaOffsetX 0m
+attr unit m
+par TestNetwork.node[1].nic.phy80211p antennaOffsetY 0m
+attr unit m
+par TestNetwork.node[1].nic.phy80211p antennaOffsetZ 1.895m
+attr unit m
+par TestNetwork.node[1].nic.phy80211p antennaOffsetYaw 0rad
+attr unit rad
+par TestNetwork.node[1].nic.phy80211p analogueModels "<root>...</root> at F:/Programs/omnetpp-6.1/workspace/gr1-w6-veins_gridtest2/simulations/test/\\config.xml:34"
+par TestNetwork.node[1].nic.phy80211p decider "<root>...</root> at F:/Programs/omnetpp-6.1/workspace/gr1-w6-veins_gridtest2/simulations/test/\\config.xml:34"
+par TestNetwork.node[1].nic.phy80211p minPowerLevel -110dBm
+attr unit dBm
+par TestNetwork.node[1].nic.phy80211p timeRXToTX 0s
+attr unit s
+par TestNetwork.node[1].nic.phy80211p timeRXToSleep 0s
+attr unit s
+par TestNetwork.node[1].nic.phy80211p timeTXToRX 0s
+attr unit s
+par TestNetwork.node[1].nic.phy80211p timeTXToSleep 0s
+attr unit s
+par TestNetwork.node[1].nic.phy80211p timeSleepToRX 0s
+attr unit s
+par TestNetwork.node[1].nic.phy80211p timeSleepToTX 0s
+attr unit s
+par TestNetwork.node[1].nic.phy80211p initialRadioState 0
+par TestNetwork.node[1].nic.phy80211p radioMinAtt 1
+par TestNetwork.node[1].nic.phy80211p radioMaxAtt 0
+par TestNetwork.node[1].nic.phy80211p nbRadioChannels 1
+par TestNetwork.node[1].nic.phy80211p initialRadioChannel 0
+par TestNetwork.node[1].nic.phy80211p ccaThreshold -65dBm
+attr unit dBm
+par TestNetwork.node[1].nic.phy80211p collectCollisionStatistics false
+par TestNetwork.node[1].nic.phy80211p allowTxDuringRx false
+scalar TestNetwork.node[1].nic.phy80211p busyTime 0.00071736718417908
+par TestNetwork.node[1].nic.mac1609_4 typename "\"org.car2x.veins.modules.mac.ieee80211p.Mac1609_4\""
+par TestNetwork.node[1].nic.mac1609_4 notAffectedByHostState false
+par TestNetwork.node[1].nic.mac1609_4 headerLength 0bit
+attr unit bit
+par TestNetwork.node[1].nic.mac1609_4 address "\"auto\""
+par TestNetwork.node[1].nic.mac1609_4 useServiceChannel true
+par TestNetwork.node[1].nic.mac1609_4 serviceChannel 1
+par TestNetwork.node[1].nic.mac1609_4 bitrate 6000000bps
+attr unit bps
+par TestNetwork.node[1].nic.mac1609_4 syncOffset 0.0003s
+attr unit s
+par TestNetwork.node[1].nic.mac1609_4 txPower 20mW
+attr unit mW
+par TestNetwork.node[1].nic.mac1609_4 queueSize 0
+par TestNetwork.node[1].nic.mac1609_4 dot11RTSThreshold 12000bit
+attr unit bit
+par TestNetwork.node[1].nic.mac1609_4 dot11ShortRetryLimit 7
+par TestNetwork.node[1].nic.mac1609_4 dot11LongRetryLimit 4
+par TestNetwork.node[1].nic.mac1609_4 ackLength 112bit
+attr unit bit
+par TestNetwork.node[1].nic.mac1609_4 useAcks false
+par TestNetwork.node[1].nic.mac1609_4 frameErrorRate 0
+par TestNetwork.node[1].nic.mac1609_4 ackErrorRate 0
+scalar TestNetwork.node[1].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar TestNetwork.node[1].nic.mac1609_4 ReceivedBroadcasts 142
+scalar TestNetwork.node[1].nic.mac1609_4 SentPackets 74
+scalar TestNetwork.node[1].nic.mac1609_4 SentAcknowledgements 0
+scalar TestNetwork.node[1].nic.mac1609_4 RetriesExceeded 0
+scalar TestNetwork.node[1].nic.mac1609_4 SNIRLostPackets 3
+scalar TestNetwork.node[1].nic.mac1609_4 RXTXLostPackets 52
+scalar TestNetwork.node[1].nic.mac1609_4 TotalLostPackets 55
+scalar TestNetwork.node[1].nic.mac1609_4 DroppedPacketsInMac 0
+scalar TestNetwork.node[1].nic.mac1609_4 TooLittleTime 0
+scalar TestNetwork.node[1].nic.mac1609_4 TimesIntoBackoff 111
+scalar TestNetwork.node[1].nic.mac1609_4 SlotsBackoff 116
+scalar TestNetwork.node[1].nic.mac1609_4 NumInternalContention 0
+scalar TestNetwork.node[1].nic.mac1609_4 totalBusyTime 0.038002125624
+scalar TestNetwork.node[1].nic.mac1609_4 retriesExceeded:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar TestNetwork.node[1].nic.mac1609_4 sentAcks:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar TestNetwork.node[1].nic.mac1609_4 sentPackets:count 74
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar TestNetwork.node[1].nic.mac1609_4 collisions:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar TestNetwork.node[1].nic.mac1609_4 channelBusy:timeavg 0.0010511100631062
+attr recordingmode timeavg
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+par TestNetwork.node[1].nic typename "\"org.car2x.veins.modules.nic.Nic80211p\""
+par TestNetwork.node[1].nic connectionManagerName "\"connectionManager\""
+par TestNetwork.node[1].veinsmobility typename "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
+par TestNetwork.node[1].veinsmobility notAffectedByHostState true
+par TestNetwork.node[1].veinsmobility x 0
+par TestNetwork.node[1].veinsmobility y 0
+par TestNetwork.node[1].veinsmobility z 0
+par TestNetwork.node[1].veinsmobility xOrientation 1
+par TestNetwork.node[1].veinsmobility yOrientation 0
+par TestNetwork.node[1].veinsmobility zOrientation 0
+par TestNetwork.node[1].veinsmobility hostPositionOffset 0m
+attr unit m
+par TestNetwork.node[1].veinsmobility setHostSpeed false
+par TestNetwork.node[1].veinsmobility accidentCount 0
+par TestNetwork.node[1].veinsmobility accidentStart 38.926s
+attr unit s
+par TestNetwork.node[1].veinsmobility accidentDuration "uniform(30s, 60s)"
+attr unit s
+par TestNetwork.node[1].veinsmobility accidentInterval "uniform(30s, 60s)"
+attr unit s
+scalar TestNetwork.node[1].veinsmobility startTime 1
+scalar TestNetwork.node[1].veinsmobility totalTime 36
+scalar TestNetwork.node[1].veinsmobility stopTime 37.154427707311
+scalar TestNetwork.node[1].veinsmobility minSpeed 0.33016047173778
+scalar TestNetwork.node[1].veinsmobility maxSpeed 12.420069903712
+scalar TestNetwork.node[1].veinsmobility totalDistance 287.74937337725
+scalar TestNetwork.node[1].veinsmobility totalCO2Emission 117.98419574328
+par TestNetwork.node[1] typename "\"org.car2x.veins.nodes.Car\""
+par TestNetwork.node[1] applType "\"VehicleControlApp\""
+par TestNetwork.node[1] nicType "\"Nic80211p\""
+par TestNetwork.node[1] veinsmobilityType "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
+par TestNetwork.node[2].appl typename "\"gr1_w6_veins_gridtest2.veins_inet.VehicleControlApp\""
+par TestNetwork.node[2].appl headerLength 80bit
+attr unit bit
+par TestNetwork.node[2].appl sendBeacons false
+par TestNetwork.node[2].appl beaconLengthBits 256bit
+attr unit bit
+par TestNetwork.node[2].appl beaconUserPriority 7
+par TestNetwork.node[2].appl beaconInterval 1s
+attr unit s
+par TestNetwork.node[2].appl dataLengthBits 1024bit
+attr unit bit
+par TestNetwork.node[2].appl dataOnSch true
+par TestNetwork.node[2].appl dataUserPriority 7
+par TestNetwork.node[2].appl avoidBeaconSynchronization true
+par TestNetwork.node[2].appl sendWSA false
+par TestNetwork.node[2].appl wsaLengthBits 250bit
+attr unit bit
+par TestNetwork.node[2].appl wsaInterval 1s
+attr unit s
+par TestNetwork.node[2].appl appName "\"My first Veins App!\""
+scalar TestNetwork.node[2].appl generatedWSMs 0
+scalar TestNetwork.node[2].appl receivedWSMs 0
+scalar TestNetwork.node[2].appl generatedBSMs 37
+scalar TestNetwork.node[2].appl receivedBSMs 0
+scalar TestNetwork.node[2].appl generatedWSAs 0
+scalar TestNetwork.node[2].appl receivedWSAs 0
+par TestNetwork.node[2].nic.phy80211p typename "\"org.car2x.veins.modules.phy.PhyLayer80211p\""
+par TestNetwork.node[2].nic.phy80211p recordStats false
+par TestNetwork.node[2].nic.phy80211p usePropagationDelay true
+par TestNetwork.node[2].nic.phy80211p noiseFloor -98dBm
+attr unit dBm
+par TestNetwork.node[2].nic.phy80211p useNoiseFloor true
+par TestNetwork.node[2].nic.phy80211p antenna "<Antenna type=\"SampledAntenna1D\" id=\"monopole\">...</Antenna> at F:/Programs/omnetpp-6.1/workspace/gr1-w6-veins_gridtest2/simulations/test/\\antenna.xml:35"
+par TestNetwork.node[2].nic.phy80211p antennaOffsetX 0m
+attr unit m
+par TestNetwork.node[2].nic.phy80211p antennaOffsetY 0m
+attr unit m
+par TestNetwork.node[2].nic.phy80211p antennaOffsetZ 1.895m
+attr unit m
+par TestNetwork.node[2].nic.phy80211p antennaOffsetYaw 0rad
+attr unit rad
+par TestNetwork.node[2].nic.phy80211p analogueModels "<root>...</root> at F:/Programs/omnetpp-6.1/workspace/gr1-w6-veins_gridtest2/simulations/test/\\config.xml:34"
+par TestNetwork.node[2].nic.phy80211p decider "<root>...</root> at F:/Programs/omnetpp-6.1/workspace/gr1-w6-veins_gridtest2/simulations/test/\\config.xml:34"
+par TestNetwork.node[2].nic.phy80211p minPowerLevel -110dBm
+attr unit dBm
+par TestNetwork.node[2].nic.phy80211p timeRXToTX 0s
+attr unit s
+par TestNetwork.node[2].nic.phy80211p timeRXToSleep 0s
+attr unit s
+par TestNetwork.node[2].nic.phy80211p timeTXToRX 0s
+attr unit s
+par TestNetwork.node[2].nic.phy80211p timeTXToSleep 0s
+attr unit s
+par TestNetwork.node[2].nic.phy80211p timeSleepToRX 0s
+attr unit s
+par TestNetwork.node[2].nic.phy80211p timeSleepToTX 0s
+attr unit s
+par TestNetwork.node[2].nic.phy80211p initialRadioState 0
+par TestNetwork.node[2].nic.phy80211p radioMinAtt 1
+par TestNetwork.node[2].nic.phy80211p radioMaxAtt 0
+par TestNetwork.node[2].nic.phy80211p nbRadioChannels 1
+par TestNetwork.node[2].nic.phy80211p initialRadioChannel 0
+par TestNetwork.node[2].nic.phy80211p ccaThreshold -65dBm
+attr unit dBm
+par TestNetwork.node[2].nic.phy80211p collectCollisionStatistics false
+par TestNetwork.node[2].nic.phy80211p allowTxDuringRx false
+scalar TestNetwork.node[2].nic.phy80211p busyTime 0.00097780554808371
+par TestNetwork.node[2].nic.mac1609_4 typename "\"org.car2x.veins.modules.mac.ieee80211p.Mac1609_4\""
+par TestNetwork.node[2].nic.mac1609_4 notAffectedByHostState false
+par TestNetwork.node[2].nic.mac1609_4 headerLength 0bit
+attr unit bit
+par TestNetwork.node[2].nic.mac1609_4 address "\"auto\""
+par TestNetwork.node[2].nic.mac1609_4 useServiceChannel true
+par TestNetwork.node[2].nic.mac1609_4 serviceChannel 1
+par TestNetwork.node[2].nic.mac1609_4 bitrate 6000000bps
+attr unit bps
+par TestNetwork.node[2].nic.mac1609_4 syncOffset 0.0003s
+attr unit s
+par TestNetwork.node[2].nic.mac1609_4 txPower 20mW
+attr unit mW
+par TestNetwork.node[2].nic.mac1609_4 queueSize 0
+par TestNetwork.node[2].nic.mac1609_4 dot11RTSThreshold 12000bit
+attr unit bit
+par TestNetwork.node[2].nic.mac1609_4 dot11ShortRetryLimit 7
+par TestNetwork.node[2].nic.mac1609_4 dot11LongRetryLimit 4
+par TestNetwork.node[2].nic.mac1609_4 ackLength 112bit
+attr unit bit
+par TestNetwork.node[2].nic.mac1609_4 useAcks false
+par TestNetwork.node[2].nic.mac1609_4 frameErrorRate 0
+par TestNetwork.node[2].nic.mac1609_4 ackErrorRate 0
+scalar TestNetwork.node[2].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar TestNetwork.node[2].nic.mac1609_4 ReceivedBroadcasts 104
+scalar TestNetwork.node[2].nic.mac1609_4 SentPackets 74
+scalar TestNetwork.node[2].nic.mac1609_4 SentAcknowledgements 0
+scalar TestNetwork.node[2].nic.mac1609_4 RetriesExceeded 0
+scalar TestNetwork.node[2].nic.mac1609_4 SNIRLostPackets 87
+scalar TestNetwork.node[2].nic.mac1609_4 RXTXLostPackets 7
+scalar TestNetwork.node[2].nic.mac1609_4 TotalLostPackets 94
+scalar TestNetwork.node[2].nic.mac1609_4 DroppedPacketsInMac 0
+scalar TestNetwork.node[2].nic.mac1609_4 TooLittleTime 37
+scalar TestNetwork.node[2].nic.mac1609_4 TimesIntoBackoff 148
+scalar TestNetwork.node[2].nic.mac1609_4 SlotsBackoff 111
+scalar TestNetwork.node[2].nic.mac1609_4 NumInternalContention 0
+scalar TestNetwork.node[2].nic.mac1609_4 totalBusyTime 0.038002034364
+scalar TestNetwork.node[2].nic.mac1609_4 retriesExceeded:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar TestNetwork.node[2].nic.mac1609_4 sentAcks:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar TestNetwork.node[2].nic.mac1609_4 sentPackets:count 74
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar TestNetwork.node[2].nic.mac1609_4 collisions:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar TestNetwork.node[2].nic.mac1609_4 channelBusy:timeavg 0.0010511385256781
+attr recordingmode timeavg
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+par TestNetwork.node[2].nic typename "\"org.car2x.veins.modules.nic.Nic80211p\""
+par TestNetwork.node[2].nic connectionManagerName "\"connectionManager\""
+par TestNetwork.node[2].veinsmobility typename "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
+par TestNetwork.node[2].veinsmobility notAffectedByHostState true
+par TestNetwork.node[2].veinsmobility x 0
+par TestNetwork.node[2].veinsmobility y 0
+par TestNetwork.node[2].veinsmobility z 0
+par TestNetwork.node[2].veinsmobility xOrientation 1
+par TestNetwork.node[2].veinsmobility yOrientation 0
+par TestNetwork.node[2].veinsmobility zOrientation 0
+par TestNetwork.node[2].veinsmobility hostPositionOffset 0m
+attr unit m
+par TestNetwork.node[2].veinsmobility setHostSpeed false
+par TestNetwork.node[2].veinsmobility accidentCount 0
+par TestNetwork.node[2].veinsmobility accidentStart 53.7518s
+attr unit s
+par TestNetwork.node[2].veinsmobility accidentDuration "uniform(30s, 60s)"
+attr unit s
+par TestNetwork.node[2].veinsmobility accidentInterval "uniform(30s, 60s)"
+attr unit s
+scalar TestNetwork.node[2].veinsmobility startTime 1
+scalar TestNetwork.node[2].veinsmobility totalTime 36
+scalar TestNetwork.node[2].veinsmobility stopTime 37.154427707311
+scalar TestNetwork.node[2].veinsmobility minSpeed 0.11977071186752
+scalar TestNetwork.node[2].veinsmobility maxSpeed 15.124822390651
+scalar TestNetwork.node[2].veinsmobility totalDistance 303.71289136345
+scalar TestNetwork.node[2].veinsmobility totalCO2Emission 144.75104250824
+par TestNetwork.node[2] typename "\"org.car2x.veins.nodes.Car\""
+par TestNetwork.node[2] applType "\"VehicleControlApp\""
+par TestNetwork.node[2] nicType "\"Nic80211p\""
+par TestNetwork.node[2] veinsmobilityType "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
+par TestNetwork.node[3].appl typename "\"gr1_w6_veins_gridtest2.veins_inet.VehicleControlApp\""
+par TestNetwork.node[3].appl headerLength 80bit
+attr unit bit
+par TestNetwork.node[3].appl sendBeacons false
+par TestNetwork.node[3].appl beaconLengthBits 256bit
+attr unit bit
+par TestNetwork.node[3].appl beaconUserPriority 7
+par TestNetwork.node[3].appl beaconInterval 1s
+attr unit s
+par TestNetwork.node[3].appl dataLengthBits 1024bit
+attr unit bit
+par TestNetwork.node[3].appl dataOnSch true
+par TestNetwork.node[3].appl dataUserPriority 7
+par TestNetwork.node[3].appl avoidBeaconSynchronization true
+par TestNetwork.node[3].appl sendWSA false
+par TestNetwork.node[3].appl wsaLengthBits 250bit
+attr unit bit
+par TestNetwork.node[3].appl wsaInterval 1s
+attr unit s
+par TestNetwork.node[3].appl appName "\"My first Veins App!\""
+scalar TestNetwork.node[3].appl generatedWSMs 0
+scalar TestNetwork.node[3].appl receivedWSMs 0
+scalar TestNetwork.node[3].appl generatedBSMs 1
+scalar TestNetwork.node[3].appl receivedBSMs 0
+scalar TestNetwork.node[3].appl generatedWSAs 0
+scalar TestNetwork.node[3].appl receivedWSAs 0
+par TestNetwork.node[3].nic.phy80211p typename "\"org.car2x.veins.modules.phy.PhyLayer80211p\""
+par TestNetwork.node[3].nic.phy80211p recordStats false
+par TestNetwork.node[3].nic.phy80211p usePropagationDelay true
+par TestNetwork.node[3].nic.phy80211p noiseFloor -98dBm
+attr unit dBm
+par TestNetwork.node[3].nic.phy80211p useNoiseFloor true
+par TestNetwork.node[3].nic.phy80211p antenna "<Antenna type=\"SampledAntenna1D\" id=\"monopole\">...</Antenna> at F:/Programs/omnetpp-6.1/workspace/gr1-w6-veins_gridtest2/simulations/test/\\antenna.xml:35"
+par TestNetwork.node[3].nic.phy80211p antennaOffsetX 0m
+attr unit m
+par TestNetwork.node[3].nic.phy80211p antennaOffsetY 0m
+attr unit m
+par TestNetwork.node[3].nic.phy80211p antennaOffsetZ 1.895m
+attr unit m
+par TestNetwork.node[3].nic.phy80211p antennaOffsetYaw 0rad
+attr unit rad
+par TestNetwork.node[3].nic.phy80211p analogueModels "<root>...</root> at F:/Programs/omnetpp-6.1/workspace/gr1-w6-veins_gridtest2/simulations/test/\\config.xml:34"
+par TestNetwork.node[3].nic.phy80211p decider "<root>...</root> at F:/Programs/omnetpp-6.1/workspace/gr1-w6-veins_gridtest2/simulations/test/\\config.xml:34"
+par TestNetwork.node[3].nic.phy80211p minPowerLevel -110dBm
+attr unit dBm
+par TestNetwork.node[3].nic.phy80211p timeRXToTX 0s
+attr unit s
+par TestNetwork.node[3].nic.phy80211p timeRXToSleep 0s
+attr unit s
+par TestNetwork.node[3].nic.phy80211p timeTXToRX 0s
+attr unit s
+par TestNetwork.node[3].nic.phy80211p timeTXToSleep 0s
+attr unit s
+par TestNetwork.node[3].nic.phy80211p timeSleepToRX 0s
+attr unit s
+par TestNetwork.node[3].nic.phy80211p timeSleepToTX 0s
+attr unit s
+par TestNetwork.node[3].nic.phy80211p initialRadioState 0
+par TestNetwork.node[3].nic.phy80211p radioMinAtt 1
+par TestNetwork.node[3].nic.phy80211p radioMaxAtt 0
+par TestNetwork.node[3].nic.phy80211p nbRadioChannels 1
+par TestNetwork.node[3].nic.phy80211p initialRadioChannel 0
+par TestNetwork.node[3].nic.phy80211p ccaThreshold -65dBm
+attr unit dBm
+par TestNetwork.node[3].nic.phy80211p collectCollisionStatistics false
+par TestNetwork.node[3].nic.phy80211p allowTxDuringRx false
+scalar TestNetwork.node[3].nic.phy80211p busyTime 0.0078742346252095
+par TestNetwork.node[3].nic.mac1609_4 typename "\"org.car2x.veins.modules.mac.ieee80211p.Mac1609_4\""
+par TestNetwork.node[3].nic.mac1609_4 notAffectedByHostState false
+par TestNetwork.node[3].nic.mac1609_4 headerLength 0bit
+attr unit bit
+par TestNetwork.node[3].nic.mac1609_4 address "\"auto\""
+par TestNetwork.node[3].nic.mac1609_4 useServiceChannel true
+par TestNetwork.node[3].nic.mac1609_4 serviceChannel 1
+par TestNetwork.node[3].nic.mac1609_4 bitrate 6000000bps
+attr unit bps
+par TestNetwork.node[3].nic.mac1609_4 syncOffset 0.0003s
+attr unit s
+par TestNetwork.node[3].nic.mac1609_4 txPower 20mW
+attr unit mW
+par TestNetwork.node[3].nic.mac1609_4 queueSize 0
+par TestNetwork.node[3].nic.mac1609_4 dot11RTSThreshold 12000bit
+attr unit bit
+par TestNetwork.node[3].nic.mac1609_4 dot11ShortRetryLimit 7
+par TestNetwork.node[3].nic.mac1609_4 dot11LongRetryLimit 4
+par TestNetwork.node[3].nic.mac1609_4 ackLength 112bit
+attr unit bit
+par TestNetwork.node[3].nic.mac1609_4 useAcks false
+par TestNetwork.node[3].nic.mac1609_4 frameErrorRate 0
+par TestNetwork.node[3].nic.mac1609_4 ackErrorRate 0
+scalar TestNetwork.node[3].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar TestNetwork.node[3].nic.mac1609_4 ReceivedBroadcasts 6
+scalar TestNetwork.node[3].nic.mac1609_4 SentPackets 2
+scalar TestNetwork.node[3].nic.mac1609_4 SentAcknowledgements 0
+scalar TestNetwork.node[3].nic.mac1609_4 RetriesExceeded 0
+scalar TestNetwork.node[3].nic.mac1609_4 SNIRLostPackets 2
+scalar TestNetwork.node[3].nic.mac1609_4 RXTXLostPackets 0
+scalar TestNetwork.node[3].nic.mac1609_4 TotalLostPackets 2
+scalar TestNetwork.node[3].nic.mac1609_4 DroppedPacketsInMac 0
+scalar TestNetwork.node[3].nic.mac1609_4 TooLittleTime 1
+scalar TestNetwork.node[3].nic.mac1609_4 TimesIntoBackoff 3
+scalar TestNetwork.node[3].nic.mac1609_4 SlotsBackoff 3
+scalar TestNetwork.node[3].nic.mac1609_4 NumInternalContention 0
+scalar TestNetwork.node[3].nic.mac1609_4 totalBusyTime 0.000983073729
+scalar TestNetwork.node[3].nic.mac1609_4 retriesExceeded:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar TestNetwork.node[3].nic.mac1609_4 sentAcks:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar TestNetwork.node[3].nic.mac1609_4 sentPackets:count 2
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar TestNetwork.node[3].nic.mac1609_4 collisions:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar TestNetwork.node[3].nic.mac1609_4 channelBusy:timeavg 0.0063731381054434
+attr recordingmode timeavg
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+par TestNetwork.node[3].nic typename "\"org.car2x.veins.modules.nic.Nic80211p\""
+par TestNetwork.node[3].nic connectionManagerName "\"connectionManager\""
+par TestNetwork.node[3].veinsmobility typename "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
+par TestNetwork.node[3].veinsmobility notAffectedByHostState true
+par TestNetwork.node[3].veinsmobility x 0
+par TestNetwork.node[3].veinsmobility y 0
+par TestNetwork.node[3].veinsmobility z 0
+par TestNetwork.node[3].veinsmobility xOrientation 1
+par TestNetwork.node[3].veinsmobility yOrientation 0
+par TestNetwork.node[3].veinsmobility zOrientation 0
+par TestNetwork.node[3].veinsmobility hostPositionOffset 0m
+attr unit m
+par TestNetwork.node[3].veinsmobility setHostSpeed false
+par TestNetwork.node[3].veinsmobility accidentCount 0
+par TestNetwork.node[3].veinsmobility accidentStart 51.5817s
+attr unit s
+par TestNetwork.node[3].veinsmobility accidentDuration "uniform(30s, 60s)"
+attr unit s
+par TestNetwork.node[3].veinsmobility accidentInterval "uniform(30s, 60s)"
+attr unit s
+scalar TestNetwork.node[3].veinsmobility startTime 37
+scalar TestNetwork.node[3].veinsmobility totalTime 0
+scalar TestNetwork.node[3].veinsmobility stopTime 37.154427707311
+scalar TestNetwork.node[3].veinsmobility totalDistance 0
+scalar TestNetwork.node[3].veinsmobility totalCO2Emission 0
+par TestNetwork.node[3] typename "\"org.car2x.veins.nodes.Car\""
+par TestNetwork.node[3] applType "\"VehicleControlApp\""
+par TestNetwork.node[3] nicType "\"Nic80211p\""
+par TestNetwork.node[3] veinsmobilityType "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
+par TestNetwork.node[4].appl typename "\"gr1_w6_veins_gridtest2.veins_inet.VehicleControlApp\""
+par TestNetwork.node[4].appl headerLength 80bit
+attr unit bit
+par TestNetwork.node[4].appl sendBeacons false
+par TestNetwork.node[4].appl beaconLengthBits 256bit
+attr unit bit
+par TestNetwork.node[4].appl beaconUserPriority 7
+par TestNetwork.node[4].appl beaconInterval 1s
+attr unit s
+par TestNetwork.node[4].appl dataLengthBits 1024bit
+attr unit bit
+par TestNetwork.node[4].appl dataOnSch true
+par TestNetwork.node[4].appl dataUserPriority 7
+par TestNetwork.node[4].appl avoidBeaconSynchronization true
+par TestNetwork.node[4].appl sendWSA false
+par TestNetwork.node[4].appl wsaLengthBits 250bit
+attr unit bit
+par TestNetwork.node[4].appl wsaInterval 1s
+attr unit s
+par TestNetwork.node[4].appl appName "\"My first Veins App!\""
+scalar TestNetwork.node[4].appl generatedWSMs 0
+scalar TestNetwork.node[4].appl receivedWSMs 0
+scalar TestNetwork.node[4].appl generatedBSMs 1
+scalar TestNetwork.node[4].appl receivedBSMs 0
+scalar TestNetwork.node[4].appl generatedWSAs 0
+scalar TestNetwork.node[4].appl receivedWSAs 0
+par TestNetwork.node[4].nic.phy80211p typename "\"org.car2x.veins.modules.phy.PhyLayer80211p\""
+par TestNetwork.node[4].nic.phy80211p recordStats false
+par TestNetwork.node[4].nic.phy80211p usePropagationDelay true
+par TestNetwork.node[4].nic.phy80211p noiseFloor -98dBm
+attr unit dBm
+par TestNetwork.node[4].nic.phy80211p useNoiseFloor true
+par TestNetwork.node[4].nic.phy80211p antenna "<Antenna type=\"SampledAntenna1D\" id=\"monopole\">...</Antenna> at F:/Programs/omnetpp-6.1/workspace/gr1-w6-veins_gridtest2/simulations/test/\\antenna.xml:35"
+par TestNetwork.node[4].nic.phy80211p antennaOffsetX 0m
+attr unit m
+par TestNetwork.node[4].nic.phy80211p antennaOffsetY 0m
+attr unit m
+par TestNetwork.node[4].nic.phy80211p antennaOffsetZ 1.895m
+attr unit m
+par TestNetwork.node[4].nic.phy80211p antennaOffsetYaw 0rad
+attr unit rad
+par TestNetwork.node[4].nic.phy80211p analogueModels "<root>...</root> at F:/Programs/omnetpp-6.1/workspace/gr1-w6-veins_gridtest2/simulations/test/\\config.xml:34"
+par TestNetwork.node[4].nic.phy80211p decider "<root>...</root> at F:/Programs/omnetpp-6.1/workspace/gr1-w6-veins_gridtest2/simulations/test/\\config.xml:34"
+par TestNetwork.node[4].nic.phy80211p minPowerLevel -110dBm
+attr unit dBm
+par TestNetwork.node[4].nic.phy80211p timeRXToTX 0s
+attr unit s
+par TestNetwork.node[4].nic.phy80211p timeRXToSleep 0s
+attr unit s
+par TestNetwork.node[4].nic.phy80211p timeTXToRX 0s
+attr unit s
+par TestNetwork.node[4].nic.phy80211p timeTXToSleep 0s
+attr unit s
+par TestNetwork.node[4].nic.phy80211p timeSleepToRX 0s
+attr unit s
+par TestNetwork.node[4].nic.phy80211p timeSleepToTX 0s
+attr unit s
+par TestNetwork.node[4].nic.phy80211p initialRadioState 0
+par TestNetwork.node[4].nic.phy80211p radioMinAtt 1
+par TestNetwork.node[4].nic.phy80211p radioMaxAtt 0
+par TestNetwork.node[4].nic.phy80211p nbRadioChannels 1
+par TestNetwork.node[4].nic.phy80211p initialRadioChannel 0
+par TestNetwork.node[4].nic.phy80211p ccaThreshold -65dBm
+attr unit dBm
+par TestNetwork.node[4].nic.phy80211p collectCollisionStatistics false
+par TestNetwork.node[4].nic.phy80211p allowTxDuringRx false
+scalar TestNetwork.node[4].nic.phy80211p busyTime 0.0078742346252095
+par TestNetwork.node[4].nic.mac1609_4 typename "\"org.car2x.veins.modules.mac.ieee80211p.Mac1609_4\""
+par TestNetwork.node[4].nic.mac1609_4 notAffectedByHostState false
+par TestNetwork.node[4].nic.mac1609_4 headerLength 0bit
+attr unit bit
+par TestNetwork.node[4].nic.mac1609_4 address "\"auto\""
+par TestNetwork.node[4].nic.mac1609_4 useServiceChannel true
+par TestNetwork.node[4].nic.mac1609_4 serviceChannel 1
+par TestNetwork.node[4].nic.mac1609_4 bitrate 6000000bps
+attr unit bps
+par TestNetwork.node[4].nic.mac1609_4 syncOffset 0.0003s
+attr unit s
+par TestNetwork.node[4].nic.mac1609_4 txPower 20mW
+attr unit mW
+par TestNetwork.node[4].nic.mac1609_4 queueSize 0
+par TestNetwork.node[4].nic.mac1609_4 dot11RTSThreshold 12000bit
+attr unit bit
+par TestNetwork.node[4].nic.mac1609_4 dot11ShortRetryLimit 7
+par TestNetwork.node[4].nic.mac1609_4 dot11LongRetryLimit 4
+par TestNetwork.node[4].nic.mac1609_4 ackLength 112bit
+attr unit bit
+par TestNetwork.node[4].nic.mac1609_4 useAcks false
+par TestNetwork.node[4].nic.mac1609_4 frameErrorRate 0
+par TestNetwork.node[4].nic.mac1609_4 ackErrorRate 0
+scalar TestNetwork.node[4].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar TestNetwork.node[4].nic.mac1609_4 ReceivedBroadcasts 5
+scalar TestNetwork.node[4].nic.mac1609_4 SentPackets 2
+scalar TestNetwork.node[4].nic.mac1609_4 SentAcknowledgements 0
+scalar TestNetwork.node[4].nic.mac1609_4 RetriesExceeded 0
+scalar TestNetwork.node[4].nic.mac1609_4 SNIRLostPackets 2
+scalar TestNetwork.node[4].nic.mac1609_4 RXTXLostPackets 0
+scalar TestNetwork.node[4].nic.mac1609_4 TotalLostPackets 2
+scalar TestNetwork.node[4].nic.mac1609_4 DroppedPacketsInMac 0
+scalar TestNetwork.node[4].nic.mac1609_4 TooLittleTime 0
+scalar TestNetwork.node[4].nic.mac1609_4 TimesIntoBackoff 4
+scalar TestNetwork.node[4].nic.mac1609_4 SlotsBackoff 3
+scalar TestNetwork.node[4].nic.mac1609_4 NumInternalContention 0
+scalar TestNetwork.node[4].nic.mac1609_4 totalBusyTime 0.000887591331
+scalar TestNetwork.node[4].nic.mac1609_4 retriesExceeded:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar TestNetwork.node[4].nic.mac1609_4 sentAcks:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar TestNetwork.node[4].nic.mac1609_4 sentPackets:count 2
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar TestNetwork.node[4].nic.mac1609_4 collisions:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar TestNetwork.node[4].nic.mac1609_4 channelBusy:timeavg 0.0057478491875323
+attr recordingmode timeavg
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+par TestNetwork.node[4].nic typename "\"org.car2x.veins.modules.nic.Nic80211p\""
+par TestNetwork.node[4].nic connectionManagerName "\"connectionManager\""
+par TestNetwork.node[4].veinsmobility typename "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
+par TestNetwork.node[4].veinsmobility notAffectedByHostState true
+par TestNetwork.node[4].veinsmobility x 0
+par TestNetwork.node[4].veinsmobility y 0
+par TestNetwork.node[4].veinsmobility z 0
+par TestNetwork.node[4].veinsmobility xOrientation 1
+par TestNetwork.node[4].veinsmobility yOrientation 0
+par TestNetwork.node[4].veinsmobility zOrientation 0
+par TestNetwork.node[4].veinsmobility hostPositionOffset 0m
+attr unit m
+par TestNetwork.node[4].veinsmobility setHostSpeed false
+par TestNetwork.node[4].veinsmobility accidentCount 0
+par TestNetwork.node[4].veinsmobility accidentStart 43.5063s
+attr unit s
+par TestNetwork.node[4].veinsmobility accidentDuration "uniform(30s, 60s)"
+attr unit s
+par TestNetwork.node[4].veinsmobility accidentInterval "uniform(30s, 60s)"
+attr unit s
+scalar TestNetwork.node[4].veinsmobility startTime 37
+scalar TestNetwork.node[4].veinsmobility totalTime 0
+scalar TestNetwork.node[4].veinsmobility stopTime 37.154427707311
+scalar TestNetwork.node[4].veinsmobility totalDistance 0
+scalar TestNetwork.node[4].veinsmobility totalCO2Emission 0
+par TestNetwork.node[4] typename "\"org.car2x.veins.nodes.Car\""
+par TestNetwork.node[4] applType "\"VehicleControlApp\""
+par TestNetwork.node[4] nicType "\"Nic80211p\""
+par TestNetwork.node[4] veinsmobilityType "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
+par TestNetwork.node[5].appl typename "\"gr1_w6_veins_gridtest2.veins_inet.VehicleControlApp\""
+par TestNetwork.node[5].appl headerLength 80bit
+attr unit bit
+par TestNetwork.node[5].appl sendBeacons false
+par TestNetwork.node[5].appl beaconLengthBits 256bit
+attr unit bit
+par TestNetwork.node[5].appl beaconUserPriority 7
+par TestNetwork.node[5].appl beaconInterval 1s
+attr unit s
+par TestNetwork.node[5].appl dataLengthBits 1024bit
+attr unit bit
+par TestNetwork.node[5].appl dataOnSch true
+par TestNetwork.node[5].appl dataUserPriority 7
+par TestNetwork.node[5].appl avoidBeaconSynchronization true
+par TestNetwork.node[5].appl sendWSA false
+par TestNetwork.node[5].appl wsaLengthBits 250bit
+attr unit bit
+par TestNetwork.node[5].appl wsaInterval 1s
+attr unit s
+par TestNetwork.node[5].appl appName "\"My first Veins App!\""
+scalar TestNetwork.node[5].appl generatedWSMs 0
+scalar TestNetwork.node[5].appl receivedWSMs 0
+scalar TestNetwork.node[5].appl generatedBSMs 1
+scalar TestNetwork.node[5].appl receivedBSMs 0
+scalar TestNetwork.node[5].appl generatedWSAs 0
+scalar TestNetwork.node[5].appl receivedWSAs 0
+par TestNetwork.node[5].nic.phy80211p typename "\"org.car2x.veins.modules.phy.PhyLayer80211p\""
+par TestNetwork.node[5].nic.phy80211p recordStats false
+par TestNetwork.node[5].nic.phy80211p usePropagationDelay true
+par TestNetwork.node[5].nic.phy80211p noiseFloor -98dBm
+attr unit dBm
+par TestNetwork.node[5].nic.phy80211p useNoiseFloor true
+par TestNetwork.node[5].nic.phy80211p antenna "<Antenna type=\"SampledAntenna1D\" id=\"monopole\">...</Antenna> at F:/Programs/omnetpp-6.1/workspace/gr1-w6-veins_gridtest2/simulations/test/\\antenna.xml:35"
+par TestNetwork.node[5].nic.phy80211p antennaOffsetX 0m
+attr unit m
+par TestNetwork.node[5].nic.phy80211p antennaOffsetY 0m
+attr unit m
+par TestNetwork.node[5].nic.phy80211p antennaOffsetZ 1.895m
+attr unit m
+par TestNetwork.node[5].nic.phy80211p antennaOffsetYaw 0rad
+attr unit rad
+par TestNetwork.node[5].nic.phy80211p analogueModels "<root>...</root> at F:/Programs/omnetpp-6.1/workspace/gr1-w6-veins_gridtest2/simulations/test/\\config.xml:34"
+par TestNetwork.node[5].nic.phy80211p decider "<root>...</root> at F:/Programs/omnetpp-6.1/workspace/gr1-w6-veins_gridtest2/simulations/test/\\config.xml:34"
+par TestNetwork.node[5].nic.phy80211p minPowerLevel -110dBm
+attr unit dBm
+par TestNetwork.node[5].nic.phy80211p timeRXToTX 0s
+attr unit s
+par TestNetwork.node[5].nic.phy80211p timeRXToSleep 0s
+attr unit s
+par TestNetwork.node[5].nic.phy80211p timeTXToRX 0s
+attr unit s
+par TestNetwork.node[5].nic.phy80211p timeTXToSleep 0s
+attr unit s
+par TestNetwork.node[5].nic.phy80211p timeSleepToRX 0s
+attr unit s
+par TestNetwork.node[5].nic.phy80211p timeSleepToTX 0s
+attr unit s
+par TestNetwork.node[5].nic.phy80211p initialRadioState 0
+par TestNetwork.node[5].nic.phy80211p radioMinAtt 1
+par TestNetwork.node[5].nic.phy80211p radioMaxAtt 0
+par TestNetwork.node[5].nic.phy80211p nbRadioChannels 1
+par TestNetwork.node[5].nic.phy80211p initialRadioChannel 0
+par TestNetwork.node[5].nic.phy80211p ccaThreshold -65dBm
+attr unit dBm
+par TestNetwork.node[5].nic.phy80211p collectCollisionStatistics false
+par TestNetwork.node[5].nic.phy80211p allowTxDuringRx false
+scalar TestNetwork.node[5].nic.phy80211p busyTime 0.0078742346252095
+par TestNetwork.node[5].nic.mac1609_4 typename "\"org.car2x.veins.modules.mac.ieee80211p.Mac1609_4\""
+par TestNetwork.node[5].nic.mac1609_4 notAffectedByHostState false
+par TestNetwork.node[5].nic.mac1609_4 headerLength 0bit
+attr unit bit
+par TestNetwork.node[5].nic.mac1609_4 address "\"auto\""
+par TestNetwork.node[5].nic.mac1609_4 useServiceChannel true
+par TestNetwork.node[5].nic.mac1609_4 serviceChannel 1
+par TestNetwork.node[5].nic.mac1609_4 bitrate 6000000bps
+attr unit bps
+par TestNetwork.node[5].nic.mac1609_4 syncOffset 0.0003s
+attr unit s
+par TestNetwork.node[5].nic.mac1609_4 txPower 20mW
+attr unit mW
+par TestNetwork.node[5].nic.mac1609_4 queueSize 0
+par TestNetwork.node[5].nic.mac1609_4 dot11RTSThreshold 12000bit
+attr unit bit
+par TestNetwork.node[5].nic.mac1609_4 dot11ShortRetryLimit 7
+par TestNetwork.node[5].nic.mac1609_4 dot11LongRetryLimit 4
+par TestNetwork.node[5].nic.mac1609_4 ackLength 112bit
+attr unit bit
+par TestNetwork.node[5].nic.mac1609_4 useAcks false
+par TestNetwork.node[5].nic.mac1609_4 frameErrorRate 0
+par TestNetwork.node[5].nic.mac1609_4 ackErrorRate 0
+scalar TestNetwork.node[5].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar TestNetwork.node[5].nic.mac1609_4 ReceivedBroadcasts 6
+scalar TestNetwork.node[5].nic.mac1609_4 SentPackets 1
+scalar TestNetwork.node[5].nic.mac1609_4 SentAcknowledgements 0
+scalar TestNetwork.node[5].nic.mac1609_4 RetriesExceeded 0
+scalar TestNetwork.node[5].nic.mac1609_4 SNIRLostPackets 2
+scalar TestNetwork.node[5].nic.mac1609_4 RXTXLostPackets 0
+scalar TestNetwork.node[5].nic.mac1609_4 TotalLostPackets 2
+scalar TestNetwork.node[5].nic.mac1609_4 DroppedPacketsInMac 0
+scalar TestNetwork.node[5].nic.mac1609_4 TooLittleTime 1
+scalar TestNetwork.node[5].nic.mac1609_4 TimesIntoBackoff 3
+scalar TestNetwork.node[5].nic.mac1609_4 SlotsBackoff 0
+scalar TestNetwork.node[5].nic.mac1609_4 NumInternalContention 0
+scalar TestNetwork.node[5].nic.mac1609_4 totalBusyTime 0.000984494107
+scalar TestNetwork.node[5].nic.mac1609_4 retriesExceeded:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar TestNetwork.node[5].nic.mac1609_4 sentAcks:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar TestNetwork.node[5].nic.mac1609_4 sentPackets:count 1
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar TestNetwork.node[5].nic.mac1609_4 collisions:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar TestNetwork.node[5].nic.mac1609_4 channelBusy:timeavg 0.0063751131460972
+attr recordingmode timeavg
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+par TestNetwork.node[5].nic typename "\"org.car2x.veins.modules.nic.Nic80211p\""
+par TestNetwork.node[5].nic connectionManagerName "\"connectionManager\""
+par TestNetwork.node[5].veinsmobility typename "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
+par TestNetwork.node[5].veinsmobility notAffectedByHostState true
+par TestNetwork.node[5].veinsmobility x 0
+par TestNetwork.node[5].veinsmobility y 0
+par TestNetwork.node[5].veinsmobility z 0
+par TestNetwork.node[5].veinsmobility xOrientation 1
+par TestNetwork.node[5].veinsmobility yOrientation 0
+par TestNetwork.node[5].veinsmobility zOrientation 0
+par TestNetwork.node[5].veinsmobility hostPositionOffset 0m
+attr unit m
+par TestNetwork.node[5].veinsmobility setHostSpeed false
+par TestNetwork.node[5].veinsmobility accidentCount 0
+par TestNetwork.node[5].veinsmobility accidentStart 39.5019s
+attr unit s
+par TestNetwork.node[5].veinsmobility accidentDuration "uniform(30s, 60s)"
+attr unit s
+par TestNetwork.node[5].veinsmobility accidentInterval "uniform(30s, 60s)"
+attr unit s
+scalar TestNetwork.node[5].veinsmobility startTime 37
+scalar TestNetwork.node[5].veinsmobility totalTime 0
+scalar TestNetwork.node[5].veinsmobility stopTime 37.154427707311
+scalar TestNetwork.node[5].veinsmobility totalDistance 0
+scalar TestNetwork.node[5].veinsmobility totalCO2Emission 0
+par TestNetwork.node[5] typename "\"org.car2x.veins.nodes.Car\""
+par TestNetwork.node[5] applType "\"VehicleControlApp\""
+par TestNetwork.node[5] nicType "\"Nic80211p\""
+par TestNetwork.node[5] veinsmobilityType "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
+par TestNetwork.rsu[0].appl typename "\"gr1_w6_veins_gridtest2.veins_inet.RSUControlApp\""
+par TestNetwork.rsu[0].appl headerLength 80bit
+attr unit bit
+par TestNetwork.rsu[0].appl sendBeacons false
+par TestNetwork.rsu[0].appl beaconLengthBits 256bit
+attr unit bit
+par TestNetwork.rsu[0].appl beaconUserPriority 7
+par TestNetwork.rsu[0].appl beaconInterval 1s
+attr unit s
+par TestNetwork.rsu[0].appl dataLengthBits 1024bit
+attr unit bit
+par TestNetwork.rsu[0].appl dataOnSch false
+par TestNetwork.rsu[0].appl dataUserPriority 7
+par TestNetwork.rsu[0].appl avoidBeaconSynchronization true
+par TestNetwork.rsu[0].appl sendWSA false
+par TestNetwork.rsu[0].appl wsaLengthBits 250bit
+attr unit bit
+par TestNetwork.rsu[0].appl wsaInterval 1s
+attr unit s
+scalar TestNetwork.rsu[0].appl generatedWSMs 0
+scalar TestNetwork.rsu[0].appl receivedWSMs 47
+scalar TestNetwork.rsu[0].appl generatedBSMs 0
+scalar TestNetwork.rsu[0].appl receivedBSMs 91
+scalar TestNetwork.rsu[0].appl generatedWSAs 0
+scalar TestNetwork.rsu[0].appl receivedWSAs 0
+par TestNetwork.rsu[0].nic.phy80211p typename "\"org.car2x.veins.modules.phy.PhyLayer80211p\""
+par TestNetwork.rsu[0].nic.phy80211p recordStats false
+par TestNetwork.rsu[0].nic.phy80211p usePropagationDelay true
+par TestNetwork.rsu[0].nic.phy80211p noiseFloor -98dBm
+attr unit dBm
+par TestNetwork.rsu[0].nic.phy80211p useNoiseFloor true
+par TestNetwork.rsu[0].nic.phy80211p antenna "<Antenna type=\"SampledAntenna1D\" id=\"monopole\">...</Antenna> at F:/Programs/omnetpp-6.1/workspace/gr1-w6-veins_gridtest2/simulations/test/\\antenna.xml:35"
+par TestNetwork.rsu[0].nic.phy80211p antennaOffsetX 0m
+attr unit m
+par TestNetwork.rsu[0].nic.phy80211p antennaOffsetY 0m
+attr unit m
+par TestNetwork.rsu[0].nic.phy80211p antennaOffsetZ 0m
+attr unit m
+par TestNetwork.rsu[0].nic.phy80211p antennaOffsetYaw 0rad
+attr unit rad
+par TestNetwork.rsu[0].nic.phy80211p analogueModels "<root>...</root> at F:/Programs/omnetpp-6.1/workspace/gr1-w6-veins_gridtest2/simulations/test/\\config.xml:34"
+par TestNetwork.rsu[0].nic.phy80211p decider "<root>...</root> at F:/Programs/omnetpp-6.1/workspace/gr1-w6-veins_gridtest2/simulations/test/\\config.xml:34"
+par TestNetwork.rsu[0].nic.phy80211p minPowerLevel -110dBm
+attr unit dBm
+par TestNetwork.rsu[0].nic.phy80211p timeRXToTX 0s
+attr unit s
+par TestNetwork.rsu[0].nic.phy80211p timeRXToSleep 0s
+attr unit s
+par TestNetwork.rsu[0].nic.phy80211p timeTXToRX 0s
+attr unit s
+par TestNetwork.rsu[0].nic.phy80211p timeTXToSleep 0s
+attr unit s
+par TestNetwork.rsu[0].nic.phy80211p timeSleepToRX 0s
+attr unit s
+par TestNetwork.rsu[0].nic.phy80211p timeSleepToTX 0s
+attr unit s
+par TestNetwork.rsu[0].nic.phy80211p initialRadioState 0
+par TestNetwork.rsu[0].nic.phy80211p radioMinAtt 1
+par TestNetwork.rsu[0].nic.phy80211p radioMaxAtt 0
+par TestNetwork.rsu[0].nic.phy80211p nbRadioChannels 1
+par TestNetwork.rsu[0].nic.phy80211p initialRadioChannel 0
+par TestNetwork.rsu[0].nic.phy80211p ccaThreshold -65dBm
+attr unit dBm
+par TestNetwork.rsu[0].nic.phy80211p collectCollisionStatistics false
+par TestNetwork.rsu[0].nic.phy80211p allowTxDuringRx false
+scalar TestNetwork.rsu[0].nic.phy80211p busyTime 0.0010122077588238
+par TestNetwork.rsu[0].nic.mac1609_4 typename "\"org.car2x.veins.modules.mac.ieee80211p.Mac1609_4\""
+par TestNetwork.rsu[0].nic.mac1609_4 notAffectedByHostState false
+par TestNetwork.rsu[0].nic.mac1609_4 headerLength 0bit
+attr unit bit
+par TestNetwork.rsu[0].nic.mac1609_4 address "\"auto\""
+par TestNetwork.rsu[0].nic.mac1609_4 useServiceChannel true
+par TestNetwork.rsu[0].nic.mac1609_4 serviceChannel 1
+par TestNetwork.rsu[0].nic.mac1609_4 bitrate 6000000bps
+attr unit bps
+par TestNetwork.rsu[0].nic.mac1609_4 syncOffset 0.0003s
+attr unit s
+par TestNetwork.rsu[0].nic.mac1609_4 txPower 20mW
+attr unit mW
+par TestNetwork.rsu[0].nic.mac1609_4 queueSize 0
+par TestNetwork.rsu[0].nic.mac1609_4 dot11RTSThreshold 12000bit
+attr unit bit
+par TestNetwork.rsu[0].nic.mac1609_4 dot11ShortRetryLimit 7
+par TestNetwork.rsu[0].nic.mac1609_4 dot11LongRetryLimit 4
+par TestNetwork.rsu[0].nic.mac1609_4 ackLength 112bit
+attr unit bit
+par TestNetwork.rsu[0].nic.mac1609_4 useAcks false
+par TestNetwork.rsu[0].nic.mac1609_4 frameErrorRate 0
+par TestNetwork.rsu[0].nic.mac1609_4 ackErrorRate 0
+scalar TestNetwork.rsu[0].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar TestNetwork.rsu[0].nic.mac1609_4 ReceivedBroadcasts 138
+scalar TestNetwork.rsu[0].nic.mac1609_4 SentPackets 46
+scalar TestNetwork.rsu[0].nic.mac1609_4 SentAcknowledgements 0
+scalar TestNetwork.rsu[0].nic.mac1609_4 RetriesExceeded 0
+scalar TestNetwork.rsu[0].nic.mac1609_4 SNIRLostPackets 87
+scalar TestNetwork.rsu[0].nic.mac1609_4 RXTXLostPackets 0
+scalar TestNetwork.rsu[0].nic.mac1609_4 TotalLostPackets 87
+scalar TestNetwork.rsu[0].nic.mac1609_4 DroppedPacketsInMac 0
+scalar TestNetwork.rsu[0].nic.mac1609_4 TooLittleTime 0
+scalar TestNetwork.rsu[0].nic.mac1609_4 TimesIntoBackoff 92
+scalar TestNetwork.rsu[0].nic.mac1609_4 SlotsBackoff 71
+scalar TestNetwork.rsu[0].nic.mac1609_4 NumInternalContention 0
+scalar TestNetwork.rsu[0].nic.mac1609_4 totalBusyTime 0.043753349394
+scalar TestNetwork.rsu[0].nic.mac1609_4 retriesExceeded:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar TestNetwork.rsu[0].nic.mac1609_4 sentAcks:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar TestNetwork.rsu[0].nic.mac1609_4 sentPackets:count 46
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar TestNetwork.rsu[0].nic.mac1609_4 collisions:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar TestNetwork.rsu[0].nic.mac1609_4 channelBusy:timeavg 0.00094657222743548
+attr recordingmode timeavg
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+par TestNetwork.rsu[0].nic typename "\"org.car2x.veins.modules.nic.Nic80211p\""
+par TestNetwork.rsu[0].nic connectionManagerName "\"connectionManager\""
+par TestNetwork.rsu[0].mobility typename "\"org.car2x.veins.base.modules.BaseMobility\""
+par TestNetwork.rsu[0].mobility notAffectedByHostState true
+par TestNetwork.rsu[0].mobility x 100
+par TestNetwork.rsu[0].mobility y 100
+par TestNetwork.rsu[0].mobility z 3
+par TestNetwork.rsu[0].mobility xOrientation 1
+par TestNetwork.rsu[0].mobility yOrientation 0
+par TestNetwork.rsu[0].mobility zOrientation 0
+par TestNetwork.rsu[0] typename "\"org.car2x.veins.nodes.RSU\""
+par TestNetwork.rsu[0] applType "\"RSUControlApp\""
+par TestNetwork.rsu[0] nicType "\"Nic80211p\""
+par TestNetwork typename "\"gr1_w6_veins_gridtest2.simulations.test.TestNetwork\""
+par TestNetwork playgroundSizeX 2500m
+attr unit m
+par TestNetwork playgroundSizeY 2500m
+attr unit m
+par TestNetwork playgroundSizeZ 50m
+attr unit m
+

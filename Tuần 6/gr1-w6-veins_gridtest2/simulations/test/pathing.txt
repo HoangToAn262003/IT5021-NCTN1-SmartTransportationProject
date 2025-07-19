@@ -1,0 +1,5 @@
+=====	Vehicle flow id: f 0 (yellow)
+start:	E3
+end:	-E15
+via:	E15
+route:	E3, E4, -E8, E11, E14, E15, -E16, -E12, E7, E11, -E13, E16, -E15
