@@ -1,1 +1,0 @@
--O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d    -isystem /opt/mingw64/include -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer  -DOMNETPPLIBS_IMPORT -DINET_IMPORT -DVEINS_IMPORT -IF:/Programs/omnetpp-6.1/samples/inet4.5/src -IF:/Programs/omnetpp-6.1/samples/veins/src -I. -I/f/Programs/omnetpp-6.1/include
